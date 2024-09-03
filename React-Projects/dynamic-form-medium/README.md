@@ -28,22 +28,9 @@ import DynamicForm from 'dynamic-form-component'
 ### Example Usage
 Below is an example of how to use the `DynamicForm` component in your react project:
 ```js
-import DynamicForm from 'dynamic-form-component';
+import { DynamicForm, IFormField } from 'dynamic-form-component';
 import { RegisterOptions } from 'react-hook-form';
 import { AiOutlineLock, AiOutlineMail, AiOutlineNumber, AiOutlineUser } from 'react-icons/ai';
-
-interface IFormField {
-    id: string;
-    errorId: string;
-    label: string;
-    type: 'text' | 'number' | 'email' | 'password' | 'checkbox' | 'select';
-    options?: { value: string; label: string }[];
-    placeholder?: string;
-    required?: boolean;
-    validation?: RegisterOptions;
-    icon?: React.ReactNode;
-    value?: string
-}
 
 const App = () => {
     const formFields: IFormField[] = [
