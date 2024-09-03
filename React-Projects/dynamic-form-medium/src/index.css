@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+    h1 {
+        @apply text-center md:text-3xl text-2xl md:font-bold font-semibold tracking-wide md:mb-3 pb-1 lg:mt-3 text-stone-600 uppercase
+    }
+
+    label {
+        @apply block text-gray-700 sm:text-lg font-bold mb-2
+    }
+
+    input {
+        @apply rounded w-full sm:py-2 sm:px-3 py-1 px-2 text-stone-600 leading-tight focus:outline-none text-sm sm:text-base
+    }
+
+    select {
+        @apply border rounded w-full sm:py-2 sm:px-3 py-1 px-3 text-stone-600 leading-tight focus:outline-none text-sm sm:text-base
+    }
+
+    span {
+        @apply text-orange-500 italic text-sm sm:text-base
+    }
+
+}

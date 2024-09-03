@@ -1,0 +1,28 @@
+{
+    "allusers": [
+        {
+            "id": 1,
+            "name": "Shrey",
+            "maths": 34,
+            "english": 45
+        },
+        {
+            "id": 2,
+            "name": "Sanjay",
+            "maths": 12,
+            "english": 45
+        },
+        {
+            "id": 3,
+            "name": "Harshil",
+            "maths": 45,
+            "english": 66
+        },
+        {
+            "id": 4,
+            "name": "Raj",
+            "maths": 20,
+            "english": 34
+        }
+    ]
+}
