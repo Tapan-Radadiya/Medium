@@ -23,7 +23,7 @@ npm install react react-dom react-hook-form react-icons
 ## Usage
 ### Importing The Component
 ```bash
-import DynamicForm from 'dynamic-form-component'
+import { DynamicForm, IFormField } from 'dynamic-form-component';
 ```
 ### Example Usage
 Below is an example of how to use the `DynamicForm` component in your react project:
