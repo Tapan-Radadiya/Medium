@@ -95,7 +95,7 @@ const App: React.FC = () => {
 
     return (
         <div className="">
-            <h1>Dynamic Form Example</h1>
+            <h1 className='text-center md:text-3xl text-2xl md:font-bold font-semibold tracking-wide md:mb-3 pb-1 lg:mt-3 text-stone-600 uppercase'>Dynamic Form Example</h1>
             <DynamicForm fields={formFields} onSubmit={handleFormSubmit} />
         </div>
     );

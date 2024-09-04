@@ -22,13 +22,13 @@ const DynamicForm: React.FC<DynamicFormProps> = ({ fields, onSubmit }) => {
                             <div className='grid grid-cols-2 gap-4'>
                                 {field.options.map(option => (
                                     <div key={option.value} className='flex gap-1 items-center justify-center'>
-                                        <label htmlFor={`${field.id}-${option.value}`} className='ml-2 mt-1'>{option.label} :</label>
+                                        <label htmlFor={`${field.id}-${option.value}`} className='text-gray-700 font-bold'>{option.label} :</label>
                                         <input
                                             id={`${field.id}-${option.value}`}
                                             {...register(field.id, { ...field.validation })}
                                             type={field.type}
                                             value={option.value}
-                                            className='w-max'
+                                            className=''
                                         />
                                     </div>
                                 ))}
@@ -37,6 +37,7 @@ const DynamicForm: React.FC<DynamicFormProps> = ({ fields, onSubmit }) => {
                             <select
                                 {...register(field.id, { ...field.validation })}
                                 id={field.id}
+                                className={"border rounded w-full sm:py-2 sm:px-3 py-1 px-3 text-stone-600 leading-tight focus:outline-none text-sm sm:text-base"}
                             >
                                 {field.options?.map((option) => (
                                     <option key={option.value} value={option.value}>
@@ -52,6 +53,7 @@ const DynamicForm: React.FC<DynamicFormProps> = ({ fields, onSubmit }) => {
                                     {...register(field.id, { ...field.validation })}
                                     type={inputType}
                                     placeholder={field.placeholder}
+                                    className={'rounded w-full sm:py-2 sm:px-3 py-1 px-2 text-stone-600 leading-tight focus:outline-none text-sm sm:text-base'}
                                 />
                                 {isPasswordField && (
                                     <div
@@ -73,10 +75,15 @@ const DynamicForm: React.FC<DynamicFormProps> = ({ fields, onSubmit }) => {
 
     return (
         <main className='md:w-3/4 m-auto md:h-0'>
-            <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col md:w-1/2 m-auto p-5 gap-5 md:mt-5 md:border border-black">
+            <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col md:w-1/2 m-auto p-5 gap-5 md:mt-5 md:border border-slate-400 rounded-lg">
                 {fields.map((field) => (
                     <div key={field.id}>
-                        <label htmlFor={field.id}>{field.label}</label>
+                        <label
+                            htmlFor={field.id}
+                            className='block text-gray-700 sm:text-lg font-bold mb-2'
+                        >
+                            {field.label}
+                        </label>
                         {renderField(field)}
                     </div>
                 ))
@@ -84,7 +91,7 @@ const DynamicForm: React.FC<DynamicFormProps> = ({ fields, onSubmit }) => {
                 <button
                     type='submit'
                     disabled={Object.keys(errors).length ? true : false}
-                    className='px-4 py-2 bg-slate-400 hover:bg-slate-600 hover:transition hover:text-white rounded-lg disabled:bg-gray-600 disabled:hover:bg-gray-600'
+                    className='px-4 py-2 bg-slate-400 hover:bg-slate-600 hover:transition hover:text-white rounded-lg disabled:bg-gray-600 disabled:hover:bg-gray-600 disabled:text-white'
                 >
                     Submit
                 </button>
